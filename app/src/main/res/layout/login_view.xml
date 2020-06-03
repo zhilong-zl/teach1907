@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/account_module"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_35"
+        android:background="@drawable/account_shape"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_point">
+
+        <EditText
+            android:id="@+id/account_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@null"
+            android:hint="用户名/手机/邮箱"
+            android:textSize="@dimen/sp_14" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray" />
+        <EditText
+            android:id="@+id/account_secrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:textSize="@dimen/sp_14" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/account_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="账号登录"
+        android:textColor="@color/red2e"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/verify_login"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/verify_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="验证码登录"
+        android:textColor="@color/fontColor333"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintLeft_toRightOf="@id/account_login"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/login_press"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_23"
+        android:background="@drawable/selector_change_color_btn_bg"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="@+id/account_module"
+        app:layout_constraintRight_toRightOf="@id/account_module"
+        app:layout_constraintTop_toBottomOf="@id/account_module" />
+    <!--登录-->
+    <View
+        android:id="@+id/verify_point"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:layout_marginTop="@dimen/dp_6"
+        app:layout_constraintLeft_toLeftOf="@id/verify_login"
+        app:layout_constraintRight_toRightOf="@id/verify_login"
+        app:layout_constraintTop_toBottomOf="@id/verify_login" />
+
+    <View
+        android:id="@+id/account_point"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@color/red2e"
+        app:layout_constraintLeft_toLeftOf="@id/account_login"
+        app:layout_constraintRight_toRightOf="@id/account_login"
+        app:layout_constraintTop_toBottomOf="@id/account_login" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/verify_area"
+        android:layout_width="@dimen/dp_0"
+        android:visibility="invisible"
+        android:layout_height="@dimen/dp_0"
+        android:background="@drawable/account_shape"
+        app:layout_constraintBottom_toBottomOf="@id/account_module"
+        app:layout_constraintLeft_toLeftOf="@id/account_module"
+        app:layout_constraintRight_toRightOf="@id/account_module"
+        app:layout_constraintTop_toTopOf="@id/account_module">
+
+        <EditText
+            android:id="@+id/verify_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@id/area_code"
+            app:layout_constraintLeft_toRightOf="@id/verify_first_cut"
+            app:layout_constraintTop_toTopOf="@id/area_code" />
+
+        <EditText
+            android:id="@+id/verify_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verify_two_cut" />
+
+        <TextView
+            android:id="@+id/area_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_marginLeft="20dp"
+            android:text="+86"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/get_verify_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:text="获取验证码"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@id/verify_code"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/verify_code" />
+
+        <View
+            android:id="@+id/verify_first_cut"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/area_code"
+            app:layout_constraintLeft_toRightOf="@id/area_code"
+            app:layout_constraintTop_toTopOf="@id/area_code" />
+
+        <View
+            android:id="@+id/verify_two_cut"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/area_code" />
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/get_verify_code"
+            app:layout_constraintRight_toLeftOf="@id/get_verify_code"
+            app:layout_constraintTop_toTopOf="@id/get_verify_code" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/more_type_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="account_point,verify_point,account_login,verify_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>
